@@ -4,6 +4,9 @@
     <% @posts.each do |post| %>
         <div class="post">
             <h4><a href="<%= post_path(post) %>"><%= post.title %></a></h4>
+            <% if user_signed_in? %>
+                <p>Author: <%= post.user.email %></p>
+            <% end %>
         </div>
     <% end %>
 </div>

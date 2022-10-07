@@ -15,7 +15,11 @@
     <p class="alert"><%= alert %></p>
 
     <% if user_signed_in? %>
-        <%= link_to "Sign out", destroy_user_session_path %>
+        <%= link_to 'Sign out', destroy_user_session_path %>
+        <%= link_to 'New post', new_post_path %>
+    <% else %>
+        <%= link_to 'Login', new_user_session_path %>
+        <%= link_to 'Register', new_user_registration_path %>
     <% end %>
     
     <%= yield %>
