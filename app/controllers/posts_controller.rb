@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: %i[new create]
+  before_action :authenticate_user!, only: %i[new create edit update]
 
   def index
     @posts = Post.all
@@ -21,5 +21,29 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+
+    if current_user != @post.user
+      flash[:alert] = "You can't edit someone else's post!"
+      redirect_to root_path
+    end
+  end
+
+  def update
+    @post = Post.find(params[:id])
+
+    if current_user != @post.user
+      flash[:error] = "You can't edit someone else's post!"
+      return redirect_to root_path
+    end
+
+    if @post.update(title: params[:post][:title], body: params[:post][:body])
+      redirect_to post_path(@post)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 end

@@ -1,0 +1,25 @@
+<h2>Edit post</h2>
+
+<% if @post.errors.any? %>
+    <div class="form-errors">
+        <ul>
+            <% @post.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end%>
+
+<%= form_with model: @post do |form| %>
+    <%= form.label :title, "Title:" %>
+    <%= form.text_field :title %>
+
+    <br /><br />
+
+    <%= form.label :body, "Body:" %>
+    <%= form.text_area :body %>
+
+    <br /><br />
+
+    <%= form.submit %>
+<% end %>
