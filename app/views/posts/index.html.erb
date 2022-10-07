@@ -1,1 +1,9 @@
-<h1>HOME PAGE</h1>
+<h1>Members only! - All posts</h1>
+
+<div class="posts">
+    <% @posts.each do |post| %>
+        <div class="post">
+            <h4><a href="<%= post_path(post) %>"><%= post.title %></a></h4>
+        </div>
+    <% end %>
+</div>
