@@ -13,6 +13,10 @@
     <div class="comment-form">
         <%= render 'comments/form', comment: @comment, post: @post %>
     </div>
+<% else %>
+    <p>You need to <a href="<%= new_user_session_path %>">sign in</a> to comment</p>
+    <textarea cols="30" rows="10" disabled></textarea><br /><br />
+    <button disabled>Create comment</button>
 <% end %>
 
 <% if @post.comments.any? %>
