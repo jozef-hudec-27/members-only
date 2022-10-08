@@ -32,6 +32,7 @@
     color: #f2f2f2;
     padding: 20px 22px;
     text-decoration: none;
+    transition-duration: 0.3s;
 }
 
 .navbar a:hover {
@@ -43,6 +44,11 @@
     background-color: #AEBDCA;
     color: white;
     font-weight: 600;
+}
+
+.navbar a.main:hover {
+    transform: rotate(10deg);
+    border-radius: 50px;
 }
 
 .main {
