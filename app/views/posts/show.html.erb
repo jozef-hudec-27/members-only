@@ -3,5 +3,6 @@
 <p><%= @post.body %></p>
 
 <% if current_user == @post.user %>
-    <%= link_to "Edit post", edit_post_path(@post) %>
+    <%= link_to 'Edit post', edit_post_path(@post) %>
+    <%= link_to 'Delete post', post_path(@post), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this post?' } %>
 <% end %>
