@@ -10,12 +10,12 @@
 
 <%= form_with model: post do |form| %>
     <%= form.label :title, 'Title:' %>
-    <%= form.text_field :title, placeholder: 'My best strory ever!' %>
+    <%= form.text_field :title, placeholder: 'My best story ever!' %>
 
     <br /><br />
 
     <%= form.label :body, 'Body:' %>
-    <%= form.text_area :body %>
+    <%= form.text_area :body, placeholder: 'Your story needs to be at least 250 characters.' %>
 
     <br /><br />
 

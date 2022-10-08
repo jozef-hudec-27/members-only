@@ -1,0 +1,41 @@
+.post-title {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.post-title:hover {
+    text-decoration: underline;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.post {
+    background-color: rgb(255, 249, 240);
+    padding: 16px 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    transition-duration: 0.2s;
+    border-radius: 6px;
+    border-left: 5px solid #7895B2;
+}
+
+.post:hover {
+    background-color: rgb(253, 247, 238);
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post .post-author {
+    margin-top: auto;
+    font-size: 0.8em;
+}
+
+.post .post-body-preview {
+    font-size: 0.9em;
+    color: grey;
+}

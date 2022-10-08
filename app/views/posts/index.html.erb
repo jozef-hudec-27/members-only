@@ -1,11 +1,12 @@
-<h1>Members only! - All posts</h1>
-
 <div class="posts">
     <% @posts.each do |post| %>
         <div class="post">
-            <h4><a href="<%= post_path(post) %>"><%= post.title %></a></h4>
+            <a class="post-title" href="<%= post_path(post) %>"><%= post.title %></a>
+
+            <p class="post-body-preview"><%= post.body[0..250] %>...</p>
+
             <% if user_signed_in? %>
-                <p>Author: <%= post.user.email %></p>
+                <p  class="post-author">By: <span style="font-weight: 600;"><%= post.user.email %></span></p>
             <% end %>
         </div>
     <% end %>
