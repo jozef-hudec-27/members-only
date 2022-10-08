@@ -19,5 +19,15 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    comment = Comment.find_by_id(params[:id])
+
+    if current_user == comment.user
+      comment.destroy
+      flash[:notice] = 'Comment has been deleted.'
+      redirect_to post_path(comment.post)
+    else
+      flash[:alert] = "You can't delete someone else's comment!"
+      redirect_to post_path(comment.post)
+    end
   end
 end
