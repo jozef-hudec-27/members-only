@@ -53,18 +53,34 @@
     text-decoration: none;
     text-shadow: 2px 0px #7895B2;
     font-size: 2em;
-
     color: white;
     -webkit-text-stroke: 1px #7895B2;
     transition-duration: 0.2s;
-}
-
-.post-wrapper .post-title:hover {
-    text-shadow: 4px 0px #7895B2;
+    margin-right: auto;
 }
 
 .post-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.post-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.post-actions a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.8em;
+    padding: 4px 12px;
+    border-radius: 16px;
+    background-color: #7895B2;
+    transition-duration: 0.2s;
+}
+
+.post-actions a:hover {
+    background-color: #AEBDCA;
 }
