@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(title: params[:post][:title], body: params[:post][:body], user: current_user)
+    @post = Post.new(title: params.dig(:post).dig(:title), body: params.dig(:post).dig(:body), user: current_user)
 
     if @post.save
       redirect_to post_path(@post)
@@ -20,12 +20,23 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find_by_id(params[:id])
+
+    if @post.nil?
+      flash[:alert] = "Post with id '#{params[:id]}' does not exist."
+      return redirect_to root_path
+    end
+
     @comment = Comment.new(post: @post)
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.find_by_id(params[:id])
+
+    if @post.nil?
+      flash[:alert] = "Post with id '#{params[:id]}' does not exist."
+      return redirect_to root_path
+    end
 
     if current_user != @post.user
       flash[:alert] = "You can't edit someone else's post!"
@@ -34,7 +45,12 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = Post.find_by_id(params[:id])
+
+    if @post.nil?
+      flash[:alert] = "Post with id '#{params[:id]}' does not exist."
+      return redirect_to root_path
+    end
 
     if current_user != @post.user
       flash[:alert] = "You can't edit someone else's post!"
@@ -49,7 +65,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:id])
+    post = Post.find_by_id(params[:id])
+
+    if @post.nil?
+      flash[:alert] = "Post with id '#{params[:id]}' does not exist."
+      return redirect_to root_path
+    end
 
     if current_user == post.user
       post.destroy
