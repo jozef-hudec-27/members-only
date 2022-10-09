@@ -152,7 +152,7 @@
     outline: 1px solid #7895B2;
 }
 
-.form-errors {
+.form-errors, #error_explanation {
     font-size: 0.8em;
     display: flex;
     align-items: center;
@@ -160,7 +160,7 @@
     color: red;
 }
 
-.form-errors p {
+.form-errors p, #error_explanation p {
     margin: 0;
 }
 
@@ -175,23 +175,23 @@
     outline: 1px solid #7895B2;
 }
 
-.field label, .field em {
+.field label, .field em, .field i {
     font-size: 0.9em;
     color: grey;
 }
 
-.field em {
+.field em, .field i {
     font-size: 0.8em;
 }
 
-.sign-up-form-wrapper, .log-in-form-wrapper, .new-post-form-wrapper {
+.sign-up-form-wrapper, .log-in-form-wrapper, .new-post-form-wrapper, .edit-account-form-wrapper {
     display: flex;
     align-items: center;
     padding: 16px;
     flex-direction: column;
 }
 
-.sign-up-form-wrapper form, .log-in-form-wrapper form, .new-post-form-wrapper form {
+.sign-up-form-wrapper form, .log-in-form-wrapper form, .new-post-form-wrapper form, .edit-account-form-wrapper form {
     padding: 16px 48px;
     background-color: #F5EFE6;
     border-radius: 4px;

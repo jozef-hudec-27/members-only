@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :comments, only: [:create, :destroy]
+
+  get '/my_posts', to: 'posts#my_posts'
 end

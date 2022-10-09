@@ -1,8 +1,15 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: %i[new create edit update]
+  before_action :authenticate_user!, only: %i[new create edit update my_posts]
 
   def index
+    @heading = 'MembersOnly! - Coolest stories, from all over the world'
     @posts = Post.order('updated_at DESC')
+  end
+
+  def my_posts
+    @heading = 'My Stories'
+    @posts = Post.where(user: current_user).order('updated_at DESC')
+    render :index
   end
 
   def new
