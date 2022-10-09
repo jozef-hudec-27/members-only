@@ -47,6 +47,7 @@
     padding: 16px;
     background-color: #F5EFE6;
     color: rgb(98, 98, 98);
+    box-shadow: 0 0 25px 3px rgba(0, 0, 0, 0.2);
 }
 
 .post-wrapper .post-title {
@@ -133,4 +134,10 @@
     font-weight: 600;
     margin-right: auto;
     color: black;
+}
+
+.post-info {
+    color: grey;
+    font-size:  0.5em;
+    margin: 16px 0;
 }
