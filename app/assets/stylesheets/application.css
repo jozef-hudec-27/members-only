@@ -61,6 +61,10 @@ input, textarea {
     outline: none;
 }
 
+input[type='checkbox'] {
+    appearance: auto;
+}
+
 input[type='submit'], button {
     border-radius: 16px;
     cursor: pointer;
