@@ -1,5 +1,23 @@
+<div class="new-post-form-wrapper">
+    <%= form_with model: post do |form| %>
+        <div class="field">
+            <%= form.label :title, 'Title:' %><% unless post.errors[:title].any? %><br /><% end %>
+            <%= form.text_field :title, placeholder: 'My best story ever!' %>
+        </div>
+
+        <div class="field">
+            <%= form.label :body, 'Body:' %><% unless post.errors[:body].any? %><br /><% end %>
+            <%= form.text_area :body, placeholder: 'Your story needs to be at least 250 characters.' %>
+        </div>
+
+        <%= form.submit %>
+    <% end %>
+</div>
+
 <% if post.errors.any? %>
     <div class="form-errors">
+        <p><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</p>
+
         <ul>
             <% post.errors.each do |error| %>
                 <li><%= error.full_message %></li>
@@ -7,17 +25,3 @@
         </ul>
     </div>
 <% end%>
-
-<%= form_with model: post do |form| %>
-    <%= form.label :title, 'Title:' %>
-    <%= form.text_field :title, placeholder: 'My best story ever!' %>
-
-    <br /><br />
-
-    <%= form.label :body, 'Body:' %>
-    <%= form.text_area :body, placeholder: 'Your story needs to be at least 250 characters.' %>
-
-    <br /><br />
-
-    <%= form.submit %>
-<% end %>

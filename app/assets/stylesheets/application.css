@@ -73,10 +73,14 @@ input[type='submit'], button {
     color: white;
 }
 
-input[type='submit']:hover {
+input[type='submit']:hover, input[type='submit']:focus {
     background-color: #AEBDCA;
 }
 
 [disabled] {
     cursor: auto;
+}
+
+.field_with_errors input, .field_with_errors textarea {
+    outline: 1px solid red;
 }

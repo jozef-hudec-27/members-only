@@ -50,7 +50,7 @@
     box-shadow: 0 0 25px 3px rgba(0, 0, 0, 0.2);
 }
 
-.post-wrapper .post-title {
+.post-wrapper .post-title, .main-page-heading {
     text-decoration: none;
     text-shadow: 2px 0px #7895B2;
     font-size: 2em;
@@ -142,7 +142,29 @@
     margin: 16px 0;
 }
 
-.field input[type='email'], .field input[type='password'] {
+.new-post-form-wrapper textarea {
+    max-width: 512px;
+    min-width: 512px;
+    min-height: 128px;
+}
+
+.new-post-form-wrapper textarea:focus {
+    outline: 1px solid #7895B2;
+}
+
+.form-errors {
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: red;
+}
+
+.form-errors p {
+    margin: 0;
+}
+
+.field input[type='email'], .field input[type='password'], .field input[type='text'], .field textarea {
     border-radius: 16px;
     padding: 4px 16px;
     width: 256px;
@@ -162,14 +184,14 @@
     font-size: 0.8em;
 }
 
-.sign-up-form-wrapper, .log-in-form-wrapper {
+.sign-up-form-wrapper, .log-in-form-wrapper, .new-post-form-wrapper {
     display: flex;
     align-items: center;
     padding: 16px;
     flex-direction: column;
 }
 
-.sign-up-form-wrapper form, .log-in-form-wrapper form {
+.sign-up-form-wrapper form, .log-in-form-wrapper form, .new-post-form-wrapper form {
     padding: 16px 48px;
     background-color: #F5EFE6;
     border-radius: 4px;
