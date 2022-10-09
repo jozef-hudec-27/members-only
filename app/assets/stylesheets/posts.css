@@ -84,3 +84,53 @@
 .post-actions a:hover {
     background-color: #AEBDCA;
 }
+
+.new-comment-textarea, .comment-form-disabled > textarea {
+    width: 512px;
+    max-width: 512px;
+    min-width: 256px;
+    height: 256px;
+    min-height: 48px;
+}
+
+.new-comment-textarea:focus {
+    outline: 1px solid #7895B2;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 32px 0;
+}
+
+.comment {
+    border-bottom: 5px solid #7895B2;
+    border-radius: 8px;
+    padding: 16px;
+    width: 50%;
+}
+
+.comment .comment-body {
+    color: rgb(98, 98, 98);
+}
+
+.comment a {
+    text-decoration: none;
+}
+
+.comment a:hover {
+    color: #7895B2;
+    text-decoration: underline;
+}
+
+.comment .comment-user, .comment .comment-date, .comment a, .no-comments-msg {
+    font-size: 0.8em;
+    color: grey;
+}
+
+.comment .comment-user {
+    font-weight: 600;
+    margin-right: auto;
+    color: black;
+}

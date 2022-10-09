@@ -54,3 +54,25 @@
 .main {
     padding: 0 8px;
 }
+
+input, textarea {
+    appearance: none;
+    border: none;
+    outline: none;
+}
+
+input[type='submit'], button {
+    border-radius: 16px;
+    cursor: pointer;
+    padding: 4px 24px;
+    background-color: #7895B2;
+    color: white;
+}
+
+input[type='submit']:hover {
+    background-color: #AEBDCA;
+}
+
+[disabled] {
+    cursor: auto;
+}
