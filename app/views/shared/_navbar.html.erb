@@ -2,7 +2,8 @@
     <a class="main" href="<%= root_path %>">MembersOnly!</a>
 
     <% if user_signed_in? %>
-        <a href="<%= new_post_path %>">New post</a>
+        <a href="<%= new_post_path %>">New Post</a>
+        <a href="">My Stories</a>
         <a href="<%= destroy_user_session_path %>" style="margin-left: auto;" data-turbo-method="delete">Sign out</a>
     <% else %>
         <a href="<%= new_user_session_path %>">Login</a>
