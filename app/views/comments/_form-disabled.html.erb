@@ -1,0 +1,6 @@
+<div class="comment-form-disabled">
+    <p>You need to <a href="<%= new_user_session_path %>">sign in</a> to comment</p>
+    <textarea cols="30" rows="10" disabled></textarea><br /><br />
+    <button disabled>Create comment</button>
+    <% unless post.comments.any? %><div style="margin-bottom: 32px;"></div><% end %>
+</div>

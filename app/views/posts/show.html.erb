@@ -30,17 +30,12 @@
         <%= render 'comments/form', comment: @comment, post: @post %>
     </div>
 <% else %>
-    <div class="comment-form-disabled">
-        <p>You need to <a href="<%= new_user_session_path %>">sign in</a> to comment</p>
-        <textarea cols="30" rows="10" disabled></textarea><br /><br />
-        <button disabled>Create comment</button>
-        <% unless @post.comments.any? %><div style="margin-bottom: 32px;"></div><% end %>
-    </div>
+    <%= render 'comments/form-disabled', post: @post %>
 <% end %>
 
-<% if @post.comments.any? %>
+<% if @post_comments.any? %>
     <div class="comments">
-        <% @post.comments.order('updated_at DESC').each do |comment| %>
+        <% @post_comments.each do |comment| %>
             <div class="comment">
                 <div style="display: flex; align-items: center;">
                     <p class="comment-user"><%= comment.user.email %></p>

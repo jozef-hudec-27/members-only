@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, skip: :passwords
   devise_scope :user do
     resource :user_password, except: [:new, :show],
-                                  path: 'users',
+                                  path: 'user/password',
                                   controller: 'devise/passwords'
   end
 

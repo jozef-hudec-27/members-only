@@ -35,6 +35,7 @@ class PostsController < ApplicationController
       return redirect_to root_path
     end
 
+    @post_comments = @post.comments.order('updated_at DESC')
     @comment = Comment.new(post: @post)
   end
 
