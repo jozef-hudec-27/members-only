@@ -82,6 +82,7 @@ class PostsController < ApplicationController
     end
 
     if current_user == post.user
+      post.comments.destroy_all
       post.destroy
       flash[:notice] = 'Post has been deleted.'
       redirect_to root_path
