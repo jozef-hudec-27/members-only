@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   def my_posts
     @heading = 'My Stories'
     @posts = Post.where(user: current_user).order('updated_at DESC')
+    @no_stories_msg = "You haven't written any stories yet! Share your story by clicking 'New Story' in the navigation."
     render :index
   end
 
@@ -74,7 +75,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find_by_id(params[:id])
 
-    if @post.nil?
+    if post.nil?
       flash[:alert] = "Post with id '#{params[:id]}' does not exist."
       return redirect_to root_path
     end

@@ -1,15 +1,19 @@
 <h2 class="main-page-heading" style="text-align: center;"><%= @heading %></h2>
 
-<div class="posts">
-    <% @posts.each do |post| %>
-        <div class="post">
-            <a class="post-title" href="<%= post_path(post) %>"><%= post.title %></a>
+<% if @posts.any? %>
+    <div class="posts">
+        <% @posts.each do |post| %>
+            <div class="post">
+                <a class="post-title" href="<%= post_path(post) %>"><%= post.title %></a>
 
-            <p class="post-body-preview"><%= post.body[0..250] %>...</p>
+                <p class="post-body-preview"><%= post.body[0..250] %>...</p>
 
-            <% if user_signed_in? %>
-                <p  class="post-author">By: <span style="font-weight: 600;"><%= post.user.email %></span></p>
-            <% end %>
-        </div>
-    <% end %>
-</div>
+                <% if user_signed_in? %>
+                    <p  class="post-author">By: <span style="font-weight: 600;"><%= post.user.email %></span></p>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+<% else %>
+    <p class="no-stories-msg"><%= @no_stories_msg %></p>
+<% end %>

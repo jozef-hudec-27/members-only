@@ -10,7 +10,7 @@
 
 .posts {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 16px;
 }
 
@@ -210,4 +210,10 @@
 
 .sign-up-form-wrapper a:hover, .log-in-form-wrapper a:hover {
     text-decoration: underline;
+}
+
+.no-stories-msg {
+    color: grey;
+    text-align: center;
+    font-style: italic;
 }
