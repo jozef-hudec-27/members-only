@@ -1,24 +1,6 @@
-# README
+# MembersOnly!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Web App is part of [The Odin Project's](https://theodinproject.com) Ruby on Rails course.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## What this app is?
+It is a simple Web App where you can create an account and share your stories by creating posts. It's name *(MembersOnly!)* is derived from the fact that you can't see who wrote a certain story, unless you're logged in.
