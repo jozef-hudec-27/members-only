@@ -175,6 +175,10 @@
     outline: 1px solid #7895B2;
 }
 
+.field input[type='checkbox']:focus {
+    outline: none;
+}
+
 .field label, .field em, .field i {
     font-size: 0.9em;
     color: grey;
